@@ -117,8 +117,8 @@ take in account the compile times.
      Which is the best scenario for numexpr?
 
 
-Using compressed containers (TBD)
-=================================
+Using compressed data containers (in preparation for forthcoming tutorial)
+================================
 
 The bcolz package that mainly following NumPy semantics and allowing you
 to work with compressed datasets as if they where uncompressed.  The
