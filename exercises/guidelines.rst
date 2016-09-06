@@ -128,15 +128,15 @@ queried and the timings are presented.
 
 9. Edit query-bcolz.py and look at how a ctable query works.
 
-  - Why do you think the pure NumPy approach works slower than bcolz?
-    Try to improve the NumPy version runtime.  Would you be able to beat
-    bcolz performance?  Hint: Use numexpr.evaluate() for the expression.
+   - Why do you think the pure NumPy approach works slower than bcolz?
+     Try to improve the NumPy version runtime.  Would you be able to beat
+     bcolz performance?  Hint: Use numexpr.evaluate() for the expression.
 
-  - Use different compressors in bcolz ('blosclz', 'lz4' and 'zlib') and
-    note the differences between them.  Which one would you use for maximum
-    performance?  Which one for dealing with larger tables than available
-    memory?  Which one shows a better balance?
+   - Use different compressors in bcolz ('blosclz', 'lz4' and 'zlib') and
+     note the differences between them.  Which one would you use for maximum
+     performance?  Which one for dealing with larger tables than available
+     memory?  Which one shows a better balance?
 
-  - Deactivate the multithreading in the script.  What's the performance of
-    a ctable query, with settings put to maximum performance, with respect to
-    an structured array?
+   - Deactivate the multithreading in the script.  What's the performance of
+     a ctable query, with settings put to maximum performance, with respect to
+     an structured array?
