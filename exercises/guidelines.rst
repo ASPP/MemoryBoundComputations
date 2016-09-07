@@ -110,7 +110,7 @@ take in account the compile times.
 
    - Raise the amount of data points to 100 millions.  What happens?
 
-   - Set the number of threads for numexpr to 8 and redo the
+   - Set the number of threads for numexpr to 12 and redo the
      computation.  How its speed compares with numba?
 
    - Set the expression to evaluate to the transcendental one (
