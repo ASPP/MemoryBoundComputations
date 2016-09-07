@@ -17,7 +17,7 @@ Optimizing arithmetic expressions
 =================================
 
 1. Use script ``poly.py`` to check how much time it takes to evaluate
-   the next polynomial::
+   the next polynomial by using numpy (note the `what` parameter)::
 
     y = .25*x**3 + .75*x**2 - 1.5*x - 2
 
