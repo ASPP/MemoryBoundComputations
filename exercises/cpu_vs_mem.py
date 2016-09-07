@@ -83,6 +83,7 @@ if __name__ == "__main__":
         plt.semilogx(blocks, times, 'o-')
         plt.xlabel('Block size [b]')
         plt.ylabel('Execution time [s]')
+        plt.ylim([0., None])
         plt.title('CPU vs Memory Benchmark')
         plt.show()
     except ImportError:
