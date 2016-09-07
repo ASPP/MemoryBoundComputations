@@ -43,11 +43,11 @@ Optimizing arithmetic expressions
    - Why numexpr continues to be faster than numpy?
 
 3. The Cython program ``poly_cython.pyx`` does the same computation than
-   above, but in C.  Execute it like via its driver::
+   above, but in C.  Execute it via its driver::
 
     python cython-bench.py
 
-   - Why do you think it is more efficient than the above approaches?
+   - Why do you think Cython is more efficient than the above approaches?
 
 Evaluating transcendental functions
 ===================================
