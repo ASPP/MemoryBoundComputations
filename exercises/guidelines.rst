@@ -43,7 +43,7 @@ Optimizing arithmetic expressions
    - Why numexpr continues to be faster than numpy?
 
 3. The Cython program ``poly_cython.pyx`` does the same computation than
-   above, but in C.  Execute it via its driver::
+   above, but in C.  Execute it via its ``cython-bench.py`` driver::
 
     python cython-bench.py
 
