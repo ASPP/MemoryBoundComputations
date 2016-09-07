@@ -59,7 +59,7 @@ def bench():
 
     """
     times = []
-    blocks = np.round(np.logspace(3, 6, num=50))
+    blocks = np.round(np.logspace(3, 7, num=50))
     for b in blocks:
         times.append(timeit.timeit('cpu_vs_mem.inplace(block_size=%d)' % b,
                                    'import cpu_vs_mem', number=1))
