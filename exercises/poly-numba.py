@@ -14,8 +14,8 @@ import numpy as np
 import numexpr as ne
 
 
-N = 100*1000*1000             # number of points to evaluate
-x = np.linspace(-10, 10, N)  # vector x in range [-1, 1]
+N = 10*1000*1000             # number of points to evaluate
+x = np.linspace(-10, 10, N)  # vector x in range [-10, 10]
 
 # The different expressions supported
 expr = [
@@ -60,26 +60,26 @@ elif "x" == expr[to_compute]:
 else:
     y = eval(expr[to_compute])
 tnumpy = time() - start
-print("Result from numpy is %s in %s sec" % (y, round(tnumpy,3)))
+print("Execution time for numpy is %s sec" % round(tnumpy, 3))
 
 print()
 print("*** Running numexpr!")
 start = time()
 y = ne.evaluate(expr[to_compute], optimization='aggressive')
 tnumexpr = time() - start
-print("Result from numexpr is %s in %s sec" % (y, round(tnumexpr, 3)))
+print("Execution time for numexpr is %s sec" % round(tnumexpr, 3))
 
 print()
 print("*** Running numba!")
 start = time()
 cpoly = jit(double[:](double[:]))(poly)
 tcompile = time() - start
-print("Compilation time for numba:", round(tcompile, 3))
+print("Compilation time for numba is %s sec" % round(tcompile, 3))
 
 start = time()
 cpoly(x)
 tnumba = time() - start
-print("Result from numba is %s in %s sec" % (y, round(tnumba,3)))
+print("Execution time for numba is %s sec" % round(tnumba, 3))
 
 # print()
 # print("*** Running poly with native python!")
