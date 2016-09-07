@@ -92,7 +92,7 @@ Parallelism with threads
    - How does it evolve when using different threads? Why it scales very
      similarly than the polynomial evaluation?
 
-   - Could you have a guess at the memory bandwidth of this machine?
+   - Could you have a guess at which is the memory bandwidth of this machine?
 
 
 Using Numba
@@ -112,6 +112,10 @@ take in account the compile times.
 
    - Set the number of threads for numexpr to 8 and redo the
      computation.  How its speed compares with numba?
+
+   - Set the expression to evaluate to the transcendental one (
+     `expr_to_compute = 3`).  How the speeds change?  Why do you think
+     numexpr is faster here?
 
    - Provided this, which do you think is the best scenario for numba?
      Which is the best scenario for numexpr?

@@ -26,46 +26,46 @@ expr = [
     ]
 
 # Set here the index of the expression to compute
-to_compute = 1
+expr_to_compute = 1
 
-ne.set_num_threads(4)   # the number of threads for numexpr
+ne.set_num_threads(1)   # the number of threads for numexpr
 
 # A function that is going to be accelerated by numba
 def poly(x):
     y = np.empty(N, dtype=np.float64)
-    if to_compute == 0:
+    if expr_to_compute == 0:
         for i in range(N):
             y[i] = 0.25*x[i]**3 + 0.75*x[i]**2 + 1.5*x[i] - 2
-    elif to_compute == 1:
+    elif expr_to_compute == 1:
         for i in range(N):
             y[i] = ((0.25*x[i] + 0.75)*x[i] + 1.5)*x[i] - 2
-    elif to_compute == 2:
+    elif expr_to_compute == 2:
         for i in range(N):
             y[i] = x[i]
-    elif to_compute == 3:
+    elif expr_to_compute == 3:
         for i in range(N):
             y[i] = math.sin(x[i])**2 + math.cos(x[i])**2
     return y
 
 
-print("Using expression: %s" % expr[to_compute], "with:", N, "points")
+print("Using expression: %s" % expr[expr_to_compute], "with:", N, "points")
 print()
 print("*** Running numpy!")
 start = time()
-if "sin" in expr[to_compute]:
+if "sin" in expr[expr_to_compute]:
     y = np.sin(x)**2 + np.cos(x)**2
-elif "x" == expr[to_compute]:
+elif "x" == expr[expr_to_compute]:
     # Trick to force a copy with NumPy
     y = x.copy()
 else:
-    y = eval(expr[to_compute])
+    y = eval(expr[expr_to_compute])
 tnumpy = time() - start
 print("Execution time for numpy is %s sec" % round(tnumpy, 3))
 
 print()
 print("*** Running numexpr!")
 start = time()
-y = ne.evaluate(expr[to_compute], optimization='aggressive')
+y = ne.evaluate(expr[expr_to_compute], optimization='aggressive')
 tnumexpr = time() - start
 print("Execution time for numexpr is %s sec" % round(tnumexpr, 3))
 
