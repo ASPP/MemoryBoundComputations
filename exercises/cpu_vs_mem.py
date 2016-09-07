@@ -79,6 +79,7 @@ if __name__ == "__main__":
     blocks, times = bench()
     try:
         import matplotlib.pyplot as plt
+        plt.figure(facecolor="white")
         plt.semilogx(blocks, times, 'o-')
         plt.xlabel('Block size [b]')
         plt.ylabel('Execution time [s]')

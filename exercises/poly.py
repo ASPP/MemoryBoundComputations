@@ -18,9 +18,9 @@ x = np.linspace(-10, 10, N)   # the x in range [-1, 1]
 expr = ".25*x**3 + .75*x**2 - 1.5*x - 2"  # 1) the polynomial to compute
 #expr = "((.25*x + .75)*x - 1.5)*x - 2"   # 2) a computer-friendly polynomial
 #expr = "x"                                # 3) the identity function
-expr = "sin(x)**2+cos(x)**2"             # 4) a transcendental function
+#expr = "sin(x)**2+cos(x)**2"             # 4) a transcendental function
 
-#what = "numpy"              # uses numpy for computations
+what = "numpy"              # uses numpy for computations
 what = "numexpr"           # uses numexpr for computations
 
 ne.set_num_threads(1)  # the number of threads for numexpr computations
