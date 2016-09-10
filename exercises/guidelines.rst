@@ -86,8 +86,9 @@ Parallelism with threads
 
     y = x
 
-   That is, do a simple copy of the `x` vector.  What's the
-   performance that you are seeing?
+   That is, do a simple copy of the `x` vector.
+
+   - What's the performance that you are seeing?
 
    - How does it evolve when using different threads? Why it scales very
      similarly than the polynomial evaluation?
@@ -119,28 +120,3 @@ take in account the compile times.
 
    - Provided this, which do you think is the best scenario for numba?
      Which is the best scenario for numexpr?
-
-
-Using compressed data containers (in preparation for forthcoming tutorial)
-================================
-
-The bcolz package that mainly following NumPy semantics and allowing you
-to work with compressed datasets as if they where uncompressed.  The
-`query-bcolz.py` script creates a bcolz ctable, a compressed version of an
-structured NumPy array, and an actual structured array.  Both are then
-queried and the timings are presented.
-
-9. Edit query-bcolz.py and look at how a ctable query works.
-
-   - Why do you think the pure NumPy approach works slower than bcolz?
-     Try to improve the NumPy version runtime.  Would you be able to beat
-     bcolz performance?  Hint: Use numexpr.evaluate() for the expression.
-
-   - Use different compressors in bcolz ('blosclz', 'lz4' and 'zlib') and
-     note the differences between them.  Which one would you use for maximum
-     performance?  Which one for dealing with larger tables than available
-     memory?  Which one shows a better balance?
-
-   - Deactivate the multithreading in the script.  What's the performance of
-     a ctable query, with settings put to maximum performance, with respect to
-     an structured array?
