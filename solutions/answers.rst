@@ -5,9 +5,9 @@ Exercises for Memory-Efficient Computing (answers)
 For the solutions of the exercises, you may want to check the
 accompanying material:
 
-  - `Timings-escher.ods`, a LibreOffice spreadsheet with data and
-    graphs for exercises 1 to 6.  This has benchmarks ran on a machine
-    (called escher) with 8 physical cores.
+- `Timings-escher.ods`, a LibreOffice spreadsheet with data and graphs
+  for exercises 1 to 6.  This has benchmarks ran on a machine (called
+  escher) with 8 physical cores.
 
 
 Exercising the blocking technique
@@ -16,11 +16,11 @@ Exercising the blocking technique
 Exercise 0
 ~~~~~~~~~~
 
-   - Which is the minimal blocksize that provides fastest performance?
+- Which is the minimal blocksize that provides fastest performance?
 
 It is around 100 KB.
 
-   - What do you think this minimum represents?
+- What do you think this minimum represents?
 
 This figure is close to the size of L2 cache size in modern CPUs
 (256 KB).  Apparently L2 is the optimal cache for making this
