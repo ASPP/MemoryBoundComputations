@@ -79,7 +79,7 @@ if __name__ == "__main__":
         import matplotlib.pyplot as plt
         plt.figure(facecolor="white")
         plt.semilogx(blocks, times, 'o-')
-        plt.xlabel('Block size [b]')
+        plt.xlabel('Block size [items]')
         plt.ylabel('Execution time [s]')
         plt.ylim([0., None])
         plt.title('CPU vs Memory Benchmark')
