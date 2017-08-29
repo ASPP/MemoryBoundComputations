@@ -5,10 +5,9 @@
 #
 # Author: Stéfan van der Walt
 # Adapted by: Francesc Alted
+# Adapted by: Zbigniew Jędrzejewski-Szmek
 # Date: 2011-09-01
-# Updated: 2016-09-01
 #######################################################################
-
 
 import numpy as np
 import timeit
@@ -17,12 +16,10 @@ import sys
 N = 10*1000*1000
 x = np.linspace(-10, 10, N)
 
-
 def raw():
     """Straight-forward NumPy evaluation of polynomial.
     """
     return (((.25 * x) + .75) * x - 1.5) * x - 2
-
 
 def inplace(block_size=20000):
     """Blocked evaluation of polynomial.
@@ -39,7 +36,6 @@ def inplace(block_size=20000):
         y[b:e] -= 2
 
     return y
-
 
 def bench():
     """Illustrate CPU vs memory trade-off.
@@ -59,11 +55,13 @@ def bench():
 
     """
     times = []
-    blocks = np.round(np.logspace(3, 7, num=50))
+    blocks = np.round(np.logspace(3, 7, num=50)).astype(int)
     for b in blocks:
-        times.append(timeit.timeit('cpu_vs_mem.inplace(block_size=%d)' % b,
-                                   'import cpu_vs_mem', number=1))
-        print('Block size: %d  Execution time: %.3f s' % (b, times[-1]))
+        t = timeit.timeit(f'cpu_vs_mem.inplace(block_size={b})',
+                          'import cpu_vs_mem',
+                          number=1)
+        times.append(t)
+        print(f'Block size: {b}  Execution time: {times[-1]:.3f} s')
         sys.stdout.flush()
 
     return blocks, times
@@ -73,7 +71,7 @@ if __name__ == "__main__":
 
     # NumPy raw computation
     time = timeit.timeit('cpu_vs_mem.raw()', 'import cpu_vs_mem', number=1)
-    print('Execution time for raw NumPy calculation: %.2f' % (time,))
+    print(f'Execution time for raw NumPy calculation: {time:.2f}')
 
     # NumPy blocked computation
     blocks, times = bench()
