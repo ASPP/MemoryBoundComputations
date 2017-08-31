@@ -11,19 +11,20 @@ import sys
 from time import time
 from multiprocessing import Pool
 import numpy as np
+from numpy import sin, cos
 import numexpr as ne
 
-N = 10 * 1000 * 1000  # number of points to evaluate
+N = 100 * 1000 * 1000  # number of points to evaluate
 x = np.linspace(-10, 10, N)  # vector x in range [-1, 1]
 
-expr = ".25*x**3 + .75*x**2 - 1.5*x - 2"  # 1) the polynomial to compute
+#expr = ".25*x**3 + .75*x**2 - 1.5*x - 2"  # 1) the polynomial to compute
 #expr = "((.25*x + .75)*x - 1.5)*x - 2"   # 2) a computer-friendly polynomial
 #expr = "x"                                # 3) the identity function
-#expr = "sin(x)**2+cos(x)**2"             # 4) a transcendental function
+expr = "sin(x)**2+cos(x)**2"             # 4) a transcendental function
 
 # Set here which library you want to use
-what = "numpy"  # uses numpy for computations
-#what = "numexpr"           # uses numexpr for computations
+#what = "numpy"  # uses numpy for computations
+what = "numexpr"           # uses numexpr for computations
 
 
 def compute(x, nt):
@@ -37,10 +38,7 @@ def compute(x, nt):
 
 def compute_block(expr_, xp, nt, i):
     x = xp[i * N // nt:(i + 1) * N // nt]
-    if "sin" in expr_:
-        # Trick to allow numpy evaluate this
-        expr_ = "np.sin(x)**2+np.cos(x)**2"
-    elif expr_ == "x":
+    if expr_ == "x":
         # Trick to force a copy with numpy
         return x.copy(), nt, i
     y = eval(expr_)
@@ -72,13 +70,12 @@ def compute_parallel(expr_, x, nt):
 
 if __name__ == '__main__':
     if len(sys.argv) < 2:
-        print("Please pass the number of threads/processes as an argument")
-        sys.exit()
+        sys.exit('Pass the number of threads/processes as an argument')
+
     nthreads = int(sys.argv[1])
-    print("Computing: '%s' using %s with %d threads and %d million points" % \
-          (expr, what, nthreads, N // 1e6))
+    print(f'Computing: {expr} using {what} with {nthreads} threads and {N // 1e6} million points')
     for nt in range(nthreads):
         t0 = time()
         y = compute(x, nt + 1)
-        ts = round(time() - t0, 3)
-        print("*** Time elapsed for %d threads:" % (nt + 1), ts, "s")
+        ts = time() - t0
+        print(f'*** Time elapsed for {nt + 1} threads: {ts:.3f} s')

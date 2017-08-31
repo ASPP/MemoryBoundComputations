@@ -31,16 +31,15 @@ Optimizing arithmetic expressions
 
     y = ((.25*x + .75)*x - 1.5)*x - 2
 
-   represents the same polynomial than the original one, but with some
-   interesting side-effects in efficiency.  Repeat this computation for
+   represents the same polynomial as the original one, but with some
+   interesting side-effects in efficiency. Repeat this computation for
    numpy and numexpr and get your own conclusions.
 
-   - Why do you think numpy is doing much more efficiently with this
-     new expression?
+   - Why do you think numpy is more efficient with this form?
 
-   - Why the speed-up in numexpr is not so high in comparison?
+   - Why the speed-up in numexpr is not as high in comparison?
 
-   - Why numexpr continues to be faster than numpy?
+   - Why does numexpr continue to be faster than numpy?
 
 3. The Cython program ``poly_cython.pyx`` does the same computation than
    above, but in C.  Execute it via its ``cython-bench.py`` driver::
