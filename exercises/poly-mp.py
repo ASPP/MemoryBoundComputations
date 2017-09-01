@@ -14,7 +14,7 @@ import numpy as np
 from numpy import sin, cos
 import numexpr as ne
 
-N = 100 * 1000 * 1000  # number of points to evaluate
+N = 20 * 1000 * 1000  # number of points to evaluate
 x = np.linspace(-10, 10, N)  # vector x in range [-1, 1]
 
 #expr = ".25*x**3 + .75*x**2 - 1.5*x - 2"  # 1) the polynomial to compute
@@ -23,8 +23,8 @@ x = np.linspace(-10, 10, N)  # vector x in range [-1, 1]
 expr = "sin(x)**2+cos(x)**2"             # 4) a transcendental function
 
 # Set here which library you want to use
-#what = "numpy"  # uses numpy for computations
-what = "numexpr"           # uses numexpr for computations
+what = "numpy"  # uses numpy for computations
+#what = "numexpr"           # uses numexpr for computations
 
 
 def compute(x, nt):
