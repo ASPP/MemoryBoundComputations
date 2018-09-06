@@ -1,0 +1,59 @@
+Type;Speed (Mbit/s);Speed (MB/s); Year
+Teletype Model 33 paper tape;0.000070 ;0.000010 ;1963
+TRS-80 Model 1 Level 1 BASIC cassette tape interface;0.00025 ;0.000032 ;1977
+Apple 2 cassette tape interface;0.0015 ;0.0002 ;1977
+Single Density 8-inch FM Floppy Disk Controller;0.250 ;0.031 ;1973
+Double Density 5.25-inch MFM Floppy Disk Controller;0.500 ;0.062 ;1978
+High Density MFM Floppy Disk Controller (1.2 MB/1.44 MB);1.0 ;0.124 ;1984
+CD Controller (1x);1.171 ;0.146 ;1988
+MFM hard disk;5 ;0.625 ;1980
+RLL hard disk;7.5 ;0.937 ;
+DVD Controller (1x);11.1 ;1.32 ;
+ESDI;24 ;3 ;
+ATA PIO Mode 0;26.4 ;3.3 ;1986
+HD DVD Controller (1x);36 ;4.5 ;
+Blu-ray Controller (1x);36 ;4.5 ;
+SCSI (Narrow SCSI) (5 MHz);40 ;5 ;1986
+ATA PIO Mode 1;41.6 ;5.2 ;1994
+ATA PIO Mode 2;66.4 ;8.3 ;1994
+Fast SCSI (8 bits/10 MHz);80 ;10 ;
+ATA PIO Mode 3;88.8 ;11.1 ;1996
+AoE over Fast Ethernet;100 ;11.9 ;2009
+iSCSI over Fast Ethernet;100 ;11.9 ;2004
+ATA PIO Mode 4;133.3 ;16.7 ;1996
+Fast Wide SCSI (16 bits/10 MHz);160 ;20 ;
+Ultra SCSI (Fast-20 SCSI) (8 bits/20 MHz);160 ;20 ;
+Ultra DMA ATA 33;264 ;33 ;1998
+Ultra Wide SCSI (16 bits/20 MHz);320 ;40 ;
+Ultra-2 SCSI 40 (Fast-40 SCSI) (8 bits/40 MHz);320 ;40 ;
+Ultra DMA ATA 66;533.6 ;66.7 ;2000
+Blu-ray Controller (16x);576 ;72 ;
+Ultra-2 wide SCSI (16 bits/40 MHz);640 ;80 ;
+Serial Storage Architecture SSA;640 ;80 ;1990
+Ultra DMA ATA 100;800 ;100 ;2002
+Fibre Channel 1GFC (1.0625 GHz);850 ;103.23 ;1997
+AoE over gigabit Ethernet, jumbo frames;1000 ;124.2 ;2009
+iSCSI over gigabit Ethernet, jumbo frames;1000 ;123.9 ;2004
+Ultra DMA ATA 133;1064 ;133 ;2005
+"Ultra-3 SCSI (Ultra 160 SCSI; Fast-80 Wide SCSI) (16 bits/40 MHz DDR)";1280 ;160 ;
+SATA revision 1.0;1500 ;150 ;2003
+Fibre Channel 2GFC (2.125 GHz);1700 ;206.5 ;2001
+Ultra-320 SCSI (Ultra4 SCSI) (16 bits/80 MHz DDR);2560 ;320 ;
+Serial Attached SCSI (SAS);3000 ;300 ;2004
+SATA Revision 2.0;3000 ;300 ;2004
+Fibre Channel 4GFC (4.25 GHz);3400 ;413 ;2004
+Serial Attached SCSI (SAS) 2;6000 ;600 ;2009
+SATA Revision 3.0;6000 ;600 ;2008
+Fibre Channel 8GFC (8.50 GHz);6800 ;826 ;2005
+Fibre Channel 16GFC (14.025 GHz);13600 ;1652 ;2011
+Serial Attached SCSI (SAS) 3;12000 ;1200 ;2013
+AoE over 10GbE;10000 ;1242 ;2009
+iSCSI over 10GbE;10000 ;1239 ;2004
+FCoE over 10GbE;10000 ;1206 ;2009
+SATA revision 3.2 - SATA Express;16000 ;2000 ;2013
+Serial Attached SCSI (SAS) 4;22500 ;2400 ;tba
+Fibre Channel 32GFC (28.05 GHz);26424 ;3303 ;2016
+NVMe over M.2 or U.2 (using PCI Express 3.0 x4 link);32000 ;3938 ;2013
+iSCSI over InfiniBand 4x;32000 ;4000 ;2007
+iSCSI over 100G Ethernet;100000 ;12392 ;2010
+FCoE over 100G Ethernet;100000 ;12064 ;2010
